@@ -47,6 +47,23 @@ for (let i = 0; i < encodedDataArray2.length; i++) {
     buffer2.set(encodedData2, offset2);
     offset2 += encodedData2.byteLength;
 }
+// add a new string to the array buffer by encoding it and adding it to the array buffer
+const newString2 = "Goodbye";
+const encodedNewString2 = encoder2.encode(newString2);
+const newBuffer2 = new Uint8Array(buffer2.byteLength + encodedNewString2.byteLength);
+newBuffer2.set(buffer2);
+let offset3 = buffer2.byteLength;
+newBuffer2.set(encodedNewString2, offset3);
+// decode the updated array buffer into an array of strings
+const decodedStrings3 = [];
+let currentOffset3 = 0;
+for (let i = 0; i < strings2.length + 1; i++) {
+    const encodedData3 = new Uint8Array(newBuffer2.buffer, currentOffset3, i < strings2.length ? strings2[i].length : encodedNewString2.length);
+    const decodedString3 = decoder2.decode(encodedData3);
+    decodedStrings3.push(decodedString3);
+    currentOffset3 += encodedData3.byteLength;
+}
+console.log(decodedStrings3);
 // search for the string "World" in the array buffer
 const searchString2 = "World";
 const encodedSearchString2 = encoder2.encode(searchString2);

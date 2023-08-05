@@ -1,0 +1,19 @@
+search(array, low, high);
+
+mid = low + (high - low) / 2;
+value = array[mid];
+
+loop until low === high;
+return false;
+
+```
+condition 1 - if value is found, return true
+--- mid is the value we are looking for
+
+condition 2 - if value is less than mid, search left by setting high to equal mid - 1
+--- mid is -1 because we already checked mid and it is not the value we are looking for
+
+condition 3 - if value is greater than mid, search right by setting low to equal mid + 1
+--- mid is +1 because we already checked mid and it is not the value we are looking for
+
+```

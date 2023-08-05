@@ -9,11 +9,11 @@ export default function two_crystal_balls(breaks: boolean[]): number {
     }
   }
 
-  i -= jumpAmount;
+  const lastJumpPos = i - jumpAmount;
 
-  for (let j = 0; j < jumpAmount && i < breaks.length; i++, j++) {
-    if (breaks[i]) {
-      return i;
+  for (let j = lastJumpPos; j <= i ; j++) {
+    if (breaks[j]) {
+      return j;
     }
   }
 

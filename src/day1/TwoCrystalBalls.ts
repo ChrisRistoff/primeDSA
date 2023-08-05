@@ -20,7 +20,6 @@ export default function two_crystal_balls(breaks: boolean[]): number {
 }
 
 
-
 export function two_crystal_balls_binary_search(breaks: boolean[]): number {
   let left = 0;
   let right = breaks.length - 1;
@@ -35,6 +34,10 @@ export function two_crystal_balls_binary_search(breaks: boolean[]): number {
     }
   }
 
-  return breaks[left] ? left : -1;
+  if (breaks[left]) {
+    return left;
+  }
+
+  return -1;
 }
 

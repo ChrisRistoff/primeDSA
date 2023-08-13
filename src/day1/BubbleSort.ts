@@ -14,7 +14,6 @@ export default function bubble_sort(arr: number[]): void {
   }
 }
 
-
 export function reverse_bubble_sort(arr: number[]): void {
   let len = arr.length;
 

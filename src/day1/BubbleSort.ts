@@ -1,30 +1,27 @@
 export default function bubble_sort(arr: number[]): void {
-  let len = arr.length;
 
-  for (let i = 0; i < len; i++) {
-    len--;
-    for (let j = 0; j < len; j++) {
+  for (let i = 0; i < arr.length; i++) {
 
-      if (arr[j] > arr[j + 1]) {
-        const temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
+    for (let j = arr.length; j > i; j--) {
+
+      if(arr[i] > arr[j]) {
+        const temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
       }
     }
   }
 }
 
 export function reverse_bubble_sort(arr: number[]): void {
-  let len = arr.length;
 
-  for (let i = 0; i < len; i++) {
-    len--;
-    for (let j = 0; j < len; j++) {
+  for (let i = 0; i < arr.length; i++) {
 
-      if (arr[j] < arr[j + 1]) {
-        const temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
+    for (let j = arr.length; j > i; j--) {
+      if(arr[i] < arr[j]) {
+        const temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
       }
     }
   }
